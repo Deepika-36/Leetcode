@@ -12,8 +12,14 @@ class MyQueue {
     }
 
     public int pop() {
-        peek();
+        if (!output.isEmpty()) {
         return output.pop();
+    } else {
+        while (!input.isEmpty()) {
+            output.push(input.pop());
+        }
+        return output.pop();
+    }
     }
 
     public int peek() {
