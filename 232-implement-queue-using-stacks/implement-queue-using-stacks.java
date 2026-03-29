@@ -17,14 +17,15 @@ class MyQueue {
     }
 
     public int peek() {
-        if (output.isEmpty()) {
-            while (!input.isEmpty()) {
-                output.push(input.pop());
-            }
+    if (!output.isEmpty()) {
+        return output.peek();
+    } else {
+        while (!input.isEmpty()) {
+            output.push(input.pop());
         }
         return output.peek();
     }
-
+}
     public boolean empty() {
         return input.isEmpty() && output.isEmpty();
     }
